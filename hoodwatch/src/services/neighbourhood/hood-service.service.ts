@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { neighborhood } from 'src/app/';
+import { Neighbourhood  } from 'src/app/interfaces/neighbourhood';
 
 const all_hoods = "https://m-hoodwatch.herokuapp.com/api/hood/"
 const update_hoods = "https://m-hoodwatch.herokuapp.com/api/hood/update/<int:pk>/"
@@ -22,11 +22,15 @@ export class HoodServiceService {
       return this.http.get(`${all_hoods}${id}/`)
     }
 
-    create(neighbourhood: { business_name: string, email: string, user: any, neighbourhood: any }) {
+    create(neighbourhood: { business_name: string, email: string, user: any, neighborhood: any }) {
       return this.http.post(all_hoods, neighbourhood)
     }
 
-    update(id: any, neighbourhood: Neighborhood) {
+    update(id: any, neighbourhood: Neighbourhood) {
       return this.http.put(`${update_hoods}${id}/`, neighbourhood)
+    }
+
+    delete(id: any): Observable<any> {
+      return this.http.delete(`${delete_hoods}${id}`)
     }
 }

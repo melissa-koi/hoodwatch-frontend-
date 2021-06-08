@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HoodServiceService } from '../../../services/neighbourhood/hood-service.service'
+import { Neighbourhood  } from 'src/app/interfaces/neighbourhood';
 
 @Component({
   selector: 'app-hood',
@@ -7,12 +8,27 @@ import { HoodServiceService } from '../../../services/neighbourhood/hood-service
   styleUrls: ['./hood.component.scss']
 })
 export class HoodComponent implements OnInit {
+
+  neighbourhood: Neighbourhood= {
+    id: '',
+    name: '',
+    location: '',
+    occupants_count: '',
+  } 
+
   hoods: any;
+
   constructor(private hservice:HoodServiceService) {}
 
   ngOnInit(): void {
   }
+
   AllHoods() {
-    this.hservice.getAllPost().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
+    this.hservice.getAllNeighbourhoods().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
   }
+
+  getNeighbourhood() {
+    this.hservice.getAllNeighbourhoods().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
+  }
+
 }
