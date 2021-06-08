@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 const all_hoods = "https://m-hoodwatch.herokuapp.com/api/hood/"
-const update_hoods = 
-const delete_hoods = 
+const update_hoods = "https://m-hoodwatch.herokuapp.com/api/hood/update/<int:pk>/"
+const delete_hoods = "https://m-hoodwatch.herokuapp.com/api/hood/hood/delete/<int:pk>/"
 
 @Injectable({
   providedIn: 'root'
