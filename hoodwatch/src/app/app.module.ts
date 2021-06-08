@@ -12,7 +12,6 @@ import { HoodComponent } from './components/hood/hood.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

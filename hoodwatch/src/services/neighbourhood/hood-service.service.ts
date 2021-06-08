@@ -23,7 +23,7 @@ export class HoodServiceService {
       return this.http.get(`${all_hoods}${id}/`)
     }
 
-    create(neighbourhood: { business_name: string, email: string, user: any, neighborhood: any }) {
+    create(neighbourhood: { name:any, location: any, occupants_count: any }) {
       return this.http.post(all_hoods, neighbourhood)
     }
 
