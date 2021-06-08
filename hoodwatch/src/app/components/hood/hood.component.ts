@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../../../services/neighbourhood/hood-service.service'
+import { HoodServiceService } from '../../../services/neighbourhood/hood-service.service'
 
 @Component({
   selector: 'app-hood',
