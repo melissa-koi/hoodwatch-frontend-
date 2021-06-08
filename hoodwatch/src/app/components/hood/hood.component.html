@@ -43,8 +43,10 @@
             <p>There are {{item.occupants_count}} occupants in this neighbourhood</p>
             </div>
             <mat-card-actions>
-                <button mat-button>UPDATE</button>
-                <button mat-button>DELETE</button>
+                <button mat-button >UPDATE</button>
+                <div *ngIf="item.id">
+                    <button mat-button (click)="deleteNeighbor(item.id)">DELETE</button>
+                </div>
             </mat-card-actions>
         </div>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HoodServiceService } from '../../../services/neighbourhood/hood-service.service'
 import { Neighbourhood  } from 'src/app/interfaces/neighbourhood';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-hood',
@@ -18,12 +19,13 @@ export class HoodComponent implements OnInit {
   submitted = false;
   
   hoods: any;
-  constructor(private hservice:HoodServiceService) {}
+  constructor(private hservice:HoodServiceService, ) {}
 
   ngOnInit(): void {
     this.AllHoods()
   }
 
+  //ADD NEIGHBOURHOOD 
   AllHoods() {
     this.hservice.getAllNeighbourhoods().subscribe(data => {this.hoods = data; console.log(this.hoods); }, error => {console.log(error);})}
 
@@ -52,5 +54,18 @@ export class HoodComponent implements OnInit {
       location: '',
       occupants_count: ''
     };
+  }
+
+  //DELETE NEIGHBOUR
+
+  deleteNeighbor(id:any){
+    this.hservice.delete(id)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
   }
 }
