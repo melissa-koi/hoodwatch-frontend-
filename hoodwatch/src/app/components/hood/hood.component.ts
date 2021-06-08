@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../../services/neighbourhood/hood-service.service'
 
 @Component({
   selector: 'app-hood',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoodComponent implements OnInit {
   hoods: any;
-  constructor(private hservice:HoodServiceService)
-  constructor() { }
+  constructor(private hservice:HoodServiceService) {}
 
   ngOnInit(): void {
   }
-
+  AllHoods() {
+    this.hservice.getAllPost().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
+  }
 }
