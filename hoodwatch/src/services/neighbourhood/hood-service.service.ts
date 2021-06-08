@@ -15,6 +15,7 @@ export class HoodServiceService {
   constructor(private http: HttpClient) { }
 
     getAllNeighbourhoods() {
+      console.log( this.http.get(all_hoods))
       return this.http.get(all_hoods)
     }
 
@@ -33,4 +34,5 @@ export class HoodServiceService {
     delete(id: any): Observable<any> {
       return this.http.delete(`${delete_hoods}${id}`)
     }
+    
 }

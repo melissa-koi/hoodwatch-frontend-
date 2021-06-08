@@ -9,26 +9,18 @@ import { Neighbourhood  } from 'src/app/interfaces/neighbourhood';
 })
 export class HoodComponent implements OnInit {
 
-  neighbourhood: Neighbourhood= {
-    id: '',
-    name: '',
-    location: '',
-    occupants_count: '',
-  } 
-
   hoods: any;
-
   constructor(private hservice:HoodServiceService) {}
 
   ngOnInit(): void {
+    this.AllHoods()
   }
 
   AllHoods() {
-    this.hservice.getAllNeighbourhoods().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
-  }
+    this.hservice.getAllNeighbourhoods().subscribe(data => {this.hoods = data; console.log(this.hoods); }, error => {console.log(error);})}
 
-  getNeighbourhood() {
-    this.hservice.getAllNeighbourhoods().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
-  }
+  // getNeighbourhood() {
+  //   this.hservice.getById().subscribe(hoods => {this.hoods = hoods; console.log(this.hoods); })
+  // }
 
 }
