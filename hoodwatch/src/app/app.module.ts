@@ -12,11 +12,15 @@ import { HoodComponent } from './components/hood/hood.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BusinessComponent } from './components/business/business.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HoodComponent
+    HoodComponent,
+    NavbarComponent,
+    BusinessComponent
   ],
   imports: [
     BrowserModule,
