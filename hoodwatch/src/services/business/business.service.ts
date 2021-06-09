@@ -18,4 +18,8 @@ export class BusinessService {
     console.log( this.http.get(all_bus))
     return this.http.get(all_bus)
   }
+
+  getById(id: any) {
+    return this.http.get(`${all_hoods}${id}/`)
+  }
 }
