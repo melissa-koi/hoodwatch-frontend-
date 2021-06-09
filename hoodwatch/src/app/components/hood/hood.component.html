@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Count</label>
+                        <label for="description">Population</label>
                         <input type="text" class="form-control" id="count" required [(ngModel)]="hood.occupants_count" name="count" />
                     </div>
 
@@ -20,14 +20,15 @@
                     </div>
                     
                     <div class="text-center">
-                        <button (click)="saveNeighbourhood()" class="btn btn-success">Submit</button>
+                        <button (click)="saveNeighbourhood()" class="btn btn-success" type="submit">Submit</button>
 
                     </div>
                 </div>
 
-                <div *ngIf="submitted"></div>
+                <div *ngIf="submitted">
                     <h4>Form submitted!</h4>
-                    <button class="btn btn-success" (click)="addNeighbourhood()">Add</button>
+                </div>
+                    
                 </div>
             </div>
         
@@ -43,7 +44,7 @@
             <p>There are {{item.occupants_count}} occupants in this neighbourhood</p>
             </div>
             <mat-card-actions>
-                    <button mat-button (click)="deleteNeighbourhood(item.id)">DELETE</button>
+                    <button mat-button (click)="deleteNeighbourhood(item.id)" type="reset">DELETE</button>
             </mat-card-actions>
         </div>
         </div>

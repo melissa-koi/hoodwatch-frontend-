@@ -63,9 +63,17 @@ export class HoodComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          this.AllHoods()
         },
         error => {
           console.log(error);
         });
   }
+
+  //Refresh
+
+  refresh() :void {
+    this.AllHoods()
+  }
+
 }
