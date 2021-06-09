@@ -1,4 +1,8 @@
 # Hoodwatch
+### By Melissa Wangui
+
+## Description
+This is a web application that allows you to be in the loop about everything happening in your neighborhood. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
