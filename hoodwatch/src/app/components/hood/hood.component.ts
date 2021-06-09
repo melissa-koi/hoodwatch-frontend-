@@ -29,7 +29,7 @@ export class HoodComponent implements OnInit {
   AllHoods() {
     this.hservice.getAllNeighbourhoods().subscribe(data => {this.hoods = data; console.log(this.hoods); }, error => {console.log(error);})}
 
-  saveNeighbor(): void {
+  saveNeighbourhood(): void {
     const data = {
       name: this.hood.name,
       location: this.hood.location,
@@ -47,7 +47,7 @@ export class HoodComponent implements OnInit {
         });
   }
 
-  newNeighbor() {
+  addNeighbourhood() {
     this.submitted = false;
     this.hood = {
       name: '',
@@ -58,7 +58,7 @@ export class HoodComponent implements OnInit {
 
   //DELETE NEIGHBOUR
 
-  deleteNeighbor(id:any){
+  deleteNeighbourhood(id:any){
     this.hservice.delete(id)
       .subscribe(
         response => {

@@ -20,14 +20,14 @@
                     </div>
                     
                     <div class="text-center">
-                        <button (click)="saveNeighbor()" class="btn btn-success">Submit</button>
+                        <button (click)="saveNeighbourhood()" class="btn btn-success">Submit</button>
 
                     </div>
                 </div>
 
-                <div *ngIf="submitted">
-                    <h4>You submitted successfully!</h4>
-                    <button class="btn btn-success" (click)="newNeighbor()">Add</button>
+                <div *ngIf="submitted"></div>
+                    <h4>Form submitted!</h4>
+                    <button class="btn btn-success" (click)="addNeighbourhood()">Add</button>
                 </div>
             </div>
         
@@ -35,7 +35,7 @@
    <div class="row">
        <div class="col-md-4" *ngFor="let item of hoods">
     
-        <div class="card" routerLink="/hood/{{ item.id }}">
+        <div class="card">
            <div class="card-header">{{item.name}}</div>
         
             <div class="card-body">
@@ -43,14 +43,10 @@
             <p>There are {{item.occupants_count}} occupants in this neighbourhood</p>
             </div>
             <mat-card-actions>
-                <button mat-button >UPDATE</button>
-                <div *ngIf="item.id">
-                    <button mat-button (click)="deleteNeighbor(item.id)">DELETE</button>
-                </div>
+                    <button mat-button (click)="deleteNeighbourhood(item.id)">DELETE</button>
             </mat-card-actions>
         </div>
         </div>
         
-   </div>
 </div>
 
