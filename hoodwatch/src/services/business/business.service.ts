@@ -23,8 +23,8 @@ export class BusinessService {
     return this.http.get(`${all_bus}${id}/`)
   }
 
-  create(business: { business_name:any, email: any, neighborhood: any }) {
-    return this.http.post(all_bus, business)
+  create(businesses: { business_name:any, email: any, neighborhood: any }) {
+    return this.http.post(all_bus, businesses)
   }
 
   update(id: any, business: Business) {

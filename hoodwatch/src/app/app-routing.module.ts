@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BusinessComponent } from './components/business/business.component';
-import { HoodComponent } from './components/hood/hood.component';
+import { BusinessComponent } from '../app/components/business/business.component';
+import { HoodComponent } from '../app/components/hood/hood.component';
 
 const routes: Routes = [
   {path:'hoods',component:HoodComponent},

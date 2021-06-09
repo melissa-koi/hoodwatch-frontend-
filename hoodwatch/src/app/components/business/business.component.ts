@@ -63,6 +63,7 @@ export class BusinessComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          console.log("got here")
           this.AllBusinesses()
         },
         error => {
