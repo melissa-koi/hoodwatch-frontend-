@@ -14,8 +14,8 @@ export class BusinessService {
 
   constructor(private http: HttpClient) { }
 
-  // getAllBusinesses() {
-  //   console.log( this.http.get(all_bus))
-  //   return this.http.get(all_bus)
-  // }
+  getAllBusinesses() {
+    console.log( this.http.get(all_bus))
+    return this.http.get(all_bus)
+  }
 }
