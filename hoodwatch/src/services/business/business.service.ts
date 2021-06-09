@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Neighbourhood  } from 'src/app/interfaces/neighbourhood';
+import { Business  } from 'src/app/interfaces/business';
 
 const all_bus = "https://m-hoodwatch.herokuapp.com/api/business/"
 const update_bus = "https://m-hoodwatch.herokuapp.com/api/business/update/"
@@ -23,7 +23,13 @@ export class BusinessService {
     return this.http.get(`${all_bus}${id}/`)
   }
 
-  create(business: { business_name:any, email: any, neighbourhood: any }) {
+  create(business: { business_name:any, email: any, neighborhood: any }) {
     return this.http.post(all_bus, business)
   }
+
+  update(id: any, business: Business) {
+    return this.http.put(`${update_bus}${id}/`, business)
+  }
+
+  
 }
