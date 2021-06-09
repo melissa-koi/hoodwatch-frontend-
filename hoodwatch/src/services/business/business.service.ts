@@ -31,5 +31,7 @@ export class BusinessService {
     return this.http.put(`${update_bus}${id}/`, business)
   }
 
-  
+  delete(id: any){
+    return this.http.delete(`${delete_bus}${id}/`)
+  }
 }
