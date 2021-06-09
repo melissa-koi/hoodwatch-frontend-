@@ -18,15 +18,55 @@ export class BusinessComponent implements OnInit {
   submitted = false;
   
   businesses: any;
+  
   constructor(private bservice:BusinessService) {}
 
   ngOnInit(): void {
     this.AllBusinesses()
   }
 
-  //ADD NEIGHBOURHOOD 
+  //ADD BUSINESS 
   AllBusinesses() {
     this.bservice.getAllBusinesses().subscribe(data => {this.businesses = data; console.log(this.businesses); }, error => {console.log(error);})}
 
+  saveBusiness(): void {
+    const data = {
+      business_name: this.business.business_name,
+      email: this.business.email,
+      neighborhood: this.business.neighborhood,
+    };
 
+    this.bservice.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  addBusiness() {
+    this.submitted = false;
+    this.business = {
+      business_name: '',
+      email: '',
+      neighborhood: ''
+    };
+  }
+
+  //DELETE BUSINESS and Refresh
+
+  deleteBusiness(id:any){
+    this.bservice.delete(id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.AllBusinesses()
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }

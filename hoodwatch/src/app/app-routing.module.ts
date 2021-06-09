@@ -5,7 +5,7 @@ import { HoodComponent } from './components/hood/hood.component';
 
 const routes: Routes = [
   {path:'hoods',component:HoodComponent},
-  {path:'business',component:BusinessComponent},
+  {path:'/business',component:BusinessComponent},
 ];
 
 @NgModule({
