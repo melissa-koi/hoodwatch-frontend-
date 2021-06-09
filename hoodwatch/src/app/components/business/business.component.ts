@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Business  } from 'src/app/interfaces/business';
+import { BusinessService  } from '../../../services/business/business.service';
+
 
 @Component({
   selector: 'app-business',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessComponent implements OnInit {
 
-  constructor() { }
+  business: Business = {
+    business_name: '',
+    email: '',
+    neighborhood: '',
+  };
+  submitted = false;
+  
+  businesses: any;
+  constructor(private bservice:BusinessService) {}
 
   ngOnInit(): void {
+    this.AllBusinesses()
   }
+
+  //ADD NEIGHBOURHOOD 
+  AllBusinesses() {
+    this.bservice.getAllBusinesses().subscribe(data => {this.businesses = data; console.log(this.businesses); }, error => {console.log(error);})}
+
 
 }
