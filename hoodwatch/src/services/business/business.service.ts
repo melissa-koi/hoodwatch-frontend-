@@ -20,6 +20,10 @@ export class BusinessService {
   }
 
   getById(id: any) {
-    return this.http.get(`${all_hoods}${id}/`)
+    return this.http.get(`${all_bus}${id}/`)
+  }
+
+  create(business: { business_name:any, email: any, neighbourhood: any }) {
+    return this.http.post(all_bus, business)
   }
 }
