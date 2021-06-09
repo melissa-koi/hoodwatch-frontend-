@@ -1,7 +1,7 @@
-<p>hood works!</p>
-<div class="container">
 
-    <h4 style="font-style: italic;">Add Neighborhood</h4>
+<div class="container my-5">
+
+    <h2 style="font-weight:bolder;  font-style: italic; text-align: center;margin-top: 20px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:cadetblue; ">Add Neighbourhood</h2>
             <div class="submit-form">
                 <div *ngIf="!submitted">
                     <div class="form-group">
@@ -19,32 +19,29 @@
                         <input type="text" class="form-control" id="location" required [(ngModel)]="hood.location" name="location" />
                     </div>
                     
-                    <div class="text-center">
-                        <button (click)="saveNeighbourhood()" class="btn btn-success" type="submit">Submit</button>
+                    <div class="mt-2">
+                        <button (click)="saveNeighbourhood()" class="btn btn-outline-info" type="submit">Submit</button>
 
                     </div>
-                </div>
-
-                <div *ngIf="submitted">
-                    <h4>Form submitted!</h4>
                 </div>
                     
                 </div>
             </div>
         
 
-   <div class="row">
+   <div class="row mx-5">
+    <h2 style="font-weight:bolder; font-style: italic; text-align: center;margin-top: 20px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:cadetblue; ">Available Neighbourhoods</h2>
        <div class="col-md-4" *ngFor="let item of hoods">
     
-        <div class="card">
-           <div class="card-header">{{item.name}}</div>
+        <div class="card mt-4">
+           <div class="card-header bg-secondary" style="font-weight: bolder;">{{item.name}}</div>
         
             <div class="card-body">
             <p>This neighbourhood is located in {{item.location}}</p>
             <p>There are {{item.occupants_count}} occupants in this neighbourhood</p>
             </div>
             <mat-card-actions>
-                    <button mat-button (click)="deleteNeighbourhood(item.id)" type="reset">DELETE</button>
+                    <button mat-button (click)="deleteNeighbourhood(item.id)" type="reset" class="btn btn-dark">DELETE</button>
             </mat-card-actions>
         </div>
         </div>

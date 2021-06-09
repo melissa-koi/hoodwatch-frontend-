@@ -19,7 +19,7 @@ export class HoodComponent implements OnInit {
   submitted = false;
   
   hoods: any;
-  constructor(private hservice:HoodServiceService, ) {}
+  constructor(private hservice:HoodServiceService,private router:Router) {}
 
   ngOnInit(): void {
     this.AllHoods()
@@ -56,7 +56,7 @@ export class HoodComponent implements OnInit {
     };
   }
 
-  //DELETE NEIGHBOUR
+  //DELETE NEIGHBOUR and Refresh
 
   deleteNeighbourhood(id:any){
     this.hservice.delete(id)
@@ -68,12 +68,6 @@ export class HoodComponent implements OnInit {
         error => {
           console.log(error);
         });
-  }
-
-  //Refresh
-
-  refresh() :void {
-    this.AllHoods()
   }
 
 }
